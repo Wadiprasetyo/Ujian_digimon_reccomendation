@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cari Digimon Favoritmu</title>
+    <style>
+    body {
+        background-image: url("https://images3.alphacoders.com/701/701880.png");
+        background-position: center top; 
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h2>Ini dia Pokemon Favoritmu</h2>
+    <img src="{{favorit['image']}}" alt="Gambar digimon"><br>
+    digimon : {{favorit['digimon'].capitalize()}}
+    stage : {{favorit['stage']}}
+    type : {{favorit['type']}}
+    Attribute : {{favorit['attribute']}}<br>
+    <h2>Berikut Rekomendasi Digimon untukmu</h2>
+    <ul>
+       {% for item in reccomend %}
+        <img src="{{item['image']}}" alt="Gambar digimon"><br>
+        <h4>Nama : {{ item['digimon'] }}</h4><br>
+        Stage : {{ item['stage'] }}
+        Type : {{ item['type'] }}
+        Attribute : {{ item['attribute'] }}<br>
+        {% endfor %}
+    </ul>
+    <form action="http://localhost:5000/">
+        <button type="submit">Kembali</button>
+    </form>
+</center>
+</body>
+</html>
