@@ -49,7 +49,7 @@ def cari():
             x['type'] = Type
             x['attribute'] = attribute
             reccomend.append(x)
-    return render_template('home.html', reccomend=reccomend, favorit=favorit)
+    return render_template('hasil.html', reccomend=reccomend, favorit=favorit)
 
 @app.route('/NotFound')
 def error():
